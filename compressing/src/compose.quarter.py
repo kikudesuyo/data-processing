@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 #画像読込、表示、保存
-img_raw=cv2.imread('orora.png')
+img_raw = cv2.imread('../img/orora-compressed.jpg')
 cv2.imshow('Img',img_raw)
 cv2.waitKey()
 img_raw_h = img_raw.shape[0]
@@ -30,7 +30,7 @@ while y < img_raw_h-4:
         x += 4
     y += 4
 cv2.imshow('Img', img)
-cv2.imwrite('orora_quarter.png', img)
+cv2.imwrite('../img/orora-compressed.jpg', img)
 cv2.waitKey()
 
 # png とjpgでは圧縮率が異なっていた、どちらにするか？？
