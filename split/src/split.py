@@ -5,13 +5,14 @@ import math
 import matplotlib.pyplot as plt
 from PIL import Image
 #画像読込、表示、保存
-filename = 'gravity-wave.jpg'
+filename = ('../compressing/img/orora-comp.png')
 img = Image.open(filename)
 
 # 分割
 pixels_with_header = []
 parts = []
 count = 0
+i = 1
 for y in range(img.height):
     for x in range(img.width):
         rgb_deci = img.getpixel((x,y))
@@ -26,6 +27,10 @@ for y in range(img.height):
         #100バイト程度に分割
         if count % 25 == 0 or (x == img.width-1 and y == img.height-1):
             pixels_with_header.append(parts)
+            filename = './temp/part' + str(i) + '.txt'
+            f = open(filename, 'w')
+            f.write(str(parts))
+            i += 1
             parts = []
 
             
@@ -52,34 +57,4 @@ for y in range(h):
     for x in range(w):
         new_img.putpixel(((x,y)), pixels[y][x])
 new_img.show()
-new_img.save('recovered_gravity-wave.png')
-
-
-    
-
-
-
-
-            
-            
-            
-            
-
-        
-
-            
-        
-
-
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-          
-            
+new_img.save('./img/orora-recovered.png')
