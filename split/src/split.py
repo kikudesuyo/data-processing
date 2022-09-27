@@ -5,7 +5,7 @@ import math
 import matplotlib.pyplot as plt
 from PIL import Image
 #画像読込、表示、保存
-filename = 'gravity-wave.jpg'
+filename = '../img/orora-recovered.png'
 img = Image.open(filename)
 
 # 分割
