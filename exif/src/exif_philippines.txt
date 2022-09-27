@@ -1,0 +1,2 @@
+ISOSpeedRatings: 500
+ExposureTime: 0.03333333333333333
