@@ -17,4 +17,3 @@ for y in range(img_before.height):
         if is_equal == False:
             print('before',img_before.getpixel((x,y))[:4])
             print('after',img_after.getpixel((x,y))[:4])
-
